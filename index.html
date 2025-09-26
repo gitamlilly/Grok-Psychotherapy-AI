@@ -1,0 +1,26 @@
+<!-- index.html -->
+<!-- Thought process: This is the main HTML file that structures the web page for the Psychotherapy AI. It's a simple chat interface with a header, chat display area, input field, and send button. We're using HTML for structure, linking to CSS for styling and JS for functionality. This setup allows the page to be opened directly in a browser from VS Code. No backend is needed as the AI logic will be handled client-side in JavaScript for simplicity. We're keeping it as a single-page application (SPA) to simulate a therapy session chat. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Psychotherapy AI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Psychotherapy AI</h1>
+        <p>Welcome to your virtual therapy session. I'm here to listen and provide support. Please note: This is not a substitute for professional therapy.</p>
+    </header>
+    <div id="chat-container">
+        <div id="chat-messages"></div>
+        <div id="input-area">
+            <input type="text" id="user-input" placeholder="Type your message here...">
+            <button id="send-btn">Send</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
