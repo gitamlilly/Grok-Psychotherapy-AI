@@ -1,0 +1,83 @@
+/* style.css */
+/* Thought process: This CSS file handles the styling to make the interface user-friendly and calming, suitable for a therapy AI. We're using a clean, minimalistic design with soft colors (blues and whites) to evoke trust and relaxation. Flexbox is used for layout to ensure responsiveness. The chat area scrolls for long conversations, and messages are styled differently for user and AI to distinguish them easily. Media queries could be added for better mobile support, but keeping it basic for now. */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #add8e6;
+    width: 100%;
+}
+
+h1 {
+    color: #333;
+}
+
+#chat-container {
+    width: 80%;
+    max-width: 600px;
+    height: 70vh;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+}
+
+#chat-messages {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+}
+
+.message {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    max-width: 80%;
+}
+
+.user-message {
+    background-color: #d1e7dd;
+    align-self: flex-end;
+    margin-left: auto;
+}
+
+.ai-message {
+    background-color: #f8d7da;
+    align-self: flex-start;
+}
+
+#input-area {
+    display: flex;
+    border-top: 1px solid #ccc;
+}
+
+#user-input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    outline: none;
+}
+
+#send-btn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#send-btn:hover {
+    background-color: #0056b3;
+}
