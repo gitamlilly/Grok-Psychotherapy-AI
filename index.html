@@ -1,25 +1,49 @@
 <!-- index.html -->
-<!-- Thought process: This is the main HTML file that structures the web page for the Psychotherapy AI. It's a simple chat interface with a header, chat display area, input field, and send button. We're using HTML for structure, linking to CSS for styling and JS for functionality. This setup allows the page to be opened directly in a browser from VS Code. No backend is needed as the AI logic will be handled client-side in JavaScript for simplicity. We're keeping it as a single-page application (SPA) to simulate a therapy session chat. -->
+<!-- Thought process: Expanding the original HTML to include a mood tracker section. This adds a dropdown for mood selection (1-5), a button to log the mood, and a canvas for displaying a line chart of mood history using Chart.js. We're including Chart.js via CDN for ease, as it's a common practice for client-side libraries. Also added a clear history button for chat and moods. The structure remains simple but enhanced for better user experience in therapy context. Added a resources section with links to real help lines. -->
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Psychotherapy AI</title>
+    <title>Enhanced Psychotherapy AI</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <header>
-        <h1>Psychotherapy AI</h1>
-        <p>Welcome to your virtual therapy session. I'm here to listen and provide support. Please note: This is not a substitute for professional therapy.</p>
+        <h1>Enhanced Psychotherapy AI</h1>
+        <p>Welcome to your virtual therapy session. I'm here to listen, provide support, and help track your moods. Please note: This is not a substitute for professional therapy. If you're in crisis, seek immediate help.</p>
     </header>
     <div id="chat-container">
         <div id="chat-messages"></div>
         <div id="input-area">
             <input type="text" id="user-input" placeholder="Type your message here...">
             <button id="send-btn">Send</button>
+            <button id="clear-chat-btn">Clear Chat</button>
         </div>
+    </div>
+    <div id="mood-tracker">
+        <h2>Mood Tracker</h2>
+        <select id="mood-select">
+            <option value="">Select your current mood</option>
+            <option value="1">1 - Very Sad</option>
+            <option value="2">2 - Sad</option>
+            <option value="3">3 - Neutral</option>
+            <option value="4">4 - Happy</option>
+            <option value="5">5 - Very Happy</option>
+        </select>
+        <button id="log-mood-btn">Log Mood</button>
+        <button id="clear-moods-btn">Clear Moods</button>
+        <canvas id="mood-chart" width="400" height="200"></canvas>
+    </div>
+    <div id="resources">
+        <h2>Resources</h2>
+        <ul>
+            <li><a href="https://www.samhsa.gov/find-help/national-helpline" target="_blank">National Helpline (US)</a></li>
+            <li><a href="https://www.crisistextline.org/" target="_blank">Crisis Text Line</a></li>
+            <li><a href="https://www.who.int/health-topics/mental-health" target="_blank">WHO Mental Health</a></li>
+        </ul>
     </div>
     <script src="script.js"></script>
 </body>
